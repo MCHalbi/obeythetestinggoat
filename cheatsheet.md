@@ -22,17 +22,55 @@ _Deactivate virtual environment:_
 ```
 
 ## Django
-### Create new project
+### Creating a new project
 _Create new Django project:_
 ```
 $ django-admin.py startproject <project-name> .
 ```
-This will create a new Django project:
+This will create the following project structure:
 ```
+.
 ├── manage.py
 └── <project-name>
     ├── __init__.py
     ├── settings.py
     ├── urls.py
     └── wsgi.py
+```
+
+### Running dev server
+```
+$ python manage.py runserver
+```
+This will start a dev server at `http://127.0.0.1:8000`.
+
+### Creating a new app
+_Create new Django app in a project:_
+```
+$ python manage.py startapp <app-name>
+```
+This will create the following project structure:
+```
+.
+├── <app-name>
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+└── <project-name>
+    ├── __init__.py
+    ├── __pycache__
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
+
+### Django test runner
+```
+$ python manage.py test
 ```
